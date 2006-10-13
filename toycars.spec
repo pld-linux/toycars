@@ -8,10 +8,10 @@ Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/toycars/%{name}-%{version}.tar.gz
 # Source0-md5:	938a925f6eb209ac85a1d4caace8e5f3
 URL:		http://sourceforge.net/projects/toycars/
+BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
-BuildRequires:	X11-OpenGL-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,9 +21,9 @@ partly by the old Atari ST game called Jupiter's Masterdrive.
 
 %description -l pl
 Toy Cars jest gr± wy¶cigow± 2D opart± na prawach fizyki. Grafika i
-interfejs u¿ywaj± SDL i OpenGL. Toy Cars czê¶ciowo zainspirowana
-zosta³a przez grê Micromachines oraz przez star± grê Jupiter's
-Masterdrive na Atari ST.
+interfejs u¿ywaj± bibliotek SDL i OpenGL. Toy Cars czê¶ciowo
+zainspirowana zosta³a przez grê Micromachines oraz przez star± grê
+Jupiter's Masterdrive na Atari ST.
 
 %prep
 %setup -q

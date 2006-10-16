@@ -2,11 +2,12 @@ Summary:	Physics-based 2D racing game
 Summary(pl):	Gra wy¶cigowa 2D oparta na prawach fizyki
 Name:		toycars
 Version:	0.3.2
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/toycars/%{name}-%{version}.tar.gz
 # Source0-md5:	70821d80bfc103feeeb98afb409b73aa
+Source1:	%{name}.desktop
 URL:		http://sourceforge.net/projects/toycars/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel
@@ -34,9 +35,13 @@ Jupiter's Masterdrive na Atari ST.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install data/images/title.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -46,3 +51,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.png

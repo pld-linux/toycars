@@ -1,5 +1,5 @@
 Summary:	Physics-based 2D racing game
-Summary(pl):	Gra wy¶cigowa 2D oparta na prawach fizyki
+Summary(pl.UTF-8):   Gra wyÅ›cigowa 2D oparta na prawach fizyki
 Name:		toycars
 Version:	0.3.2
 Release:	2
@@ -20,10 +20,10 @@ Toy Cars is a physics based 2-D racer. The graphics and the interface
 use SDL and OpenGL. Toy Cars is partly inspired by Micromachines and
 partly by the old Atari ST game called Jupiter's Masterdrive.
 
-%description -l pl
-Toy Cars jest gr± wy¶cigow± 2D opart± na prawach fizyki. Grafika i
-interfejs u¿ywaj± bibliotek SDL i OpenGL. Toy Cars czê¶ciowo
-zainspirowana zosta³a przez grê Micromachines oraz przez star± grê
+%description -l pl.UTF-8
+Toy Cars jest grÄ… wyÅ›cigowÄ… 2D opartÄ… na prawach fizyki. Grafika i
+interfejs uÅ¼ywajÄ… bibliotek SDL i OpenGL. Toy Cars czÄ™Å›ciowo
+zainspirowana zostaÅ‚a przez grÄ™ Micromachines oraz przez starÄ… grÄ™
 Jupiter's Masterdrive na Atari ST.
 
 %prep

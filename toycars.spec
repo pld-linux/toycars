@@ -1,5 +1,5 @@
 Summary:	Physics-based 2D racing game
-Summary(pl.UTF-8):   Gra wyścigowa 2D oparta na prawach fizyki
+Summary(pl.UTF-8):	Gra wyścigowa 2D oparta na prawach fizyki
 Name:		toycars
 Version:	0.3.2
 Release:	2

@@ -5,18 +5,18 @@ Summary(pl.UTF-8):	Gra wyścigowa 2D oparta na prawach fizyki
 Name:		toycars
 Version:	0.3.5
 Release:	1
-License:	Other
+License:	BSD
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/toycars/%{name}-%{version}.tar.gz
 # Source0-md5:	9835ed22b07401607ec70a1bab1bf9ff
 Source1:	%{name}.desktop
 Patch0:		%{name}-assert.patch
 URL:		http://sourceforge.net/projects/toycars/
-BuildRequires:	OpenGL-devel
-BuildRequires:	SDL-devel
+BuildRequires:	OpenGL-GLU-devel
+BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,7 +36,7 @@ Jupiter's Masterdrive na Atari ST.
 %patch0 -p1
 
 %build
-%{__aclocal} -I m4/
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -58,7 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#COPYING must be added (see COPYING file)
 %doc AUTHORS COPYING ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}

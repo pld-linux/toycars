@@ -2,10 +2,9 @@
 Name=Toy Cars
 Comment=Physics-based 2D racing game
 Comment[pl]=Gra wyścigowa oparta na prawach fizyki
-Icon=toycars.png
+Icon=toycars
 Exec=toycars
 Terminal=false
 Type=Application
 Categories=Game;X-RacingGame;
-Encoding=UTF-8
 # vi: encoding=utf-8

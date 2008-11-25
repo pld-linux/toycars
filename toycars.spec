@@ -3,14 +3,14 @@
 Summary:	Physics-based 2D racing game
 Summary(pl.UTF-8):	Gra wyścigowa 2D oparta na prawach fizyki
 Name:		toycars
-Version:	0.3.5
+Version:	0.3.7
 Release:	1
 License:	BSD
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/toycars/%{name}-%{version}.tar.gz
-# Source0-md5:	9835ed22b07401607ec70a1bab1bf9ff
+# Source0-md5:	e8e7a868e2f2dcb2947ca8ffb860b36c
 Source1:	%{name}.desktop
-Patch0:		%{name}-assert.patch
+Patch0:		%{name}-headers.patch
 URL:		http://sourceforge.net/projects/toycars/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	SDL-devel >= 1.2.10

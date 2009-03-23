@@ -1,0 +1,19 @@
+--- toycars-0.3.9/toycars_track_editor-0.1.2/src/TrackView.cxx~	2009-03-23 13:22:19.000000000 +0100
++++ toycars-0.3.9/toycars_track_editor-0.1.2/src/TrackView.cxx	2009-03-23 13:24:20.000000000 +0100
+@@ -663,7 +663,7 @@
+       case FL_ENTER:
+       case FL_LEAVE:
+          return 1;
+-      case FL_MOVE:
++      case FL_MOVE: {
+          bool oldHoverPathIntermediateVertexExists = hoverPathIntermediateVertexExists;
+          bool oldHoverPathVertexExists = hoverPathVertexExists;
+          hoverPathIntermediateVertexExists = false;
+@@ -726,6 +726,7 @@
+                redraw();
+          }
+          return 1;
++      }
+       case FL_DRAG:
+       case FL_PUSH: {
+          int b = Fl::event_button();

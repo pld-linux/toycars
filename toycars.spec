@@ -4,23 +4,23 @@
 # Conditional build
 %bcond_without	editors		# don't build track and vehicle editors
 #
-%define 	track_editor_ver	0.1.1
+%define 	track_editor_ver	0.1.2
 %define		vehicle_editor_ver	0.1.0
 Summary:	Physics-based 2D racing game
 Summary(pl.UTF-8):	Gra wyścigowa 2D oparta na prawach fizyki
 Name:		toycars
-Version:	0.3.8
+Version:	0.3.9
 Release:	1
 License:	BSD
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/toycars/%{name}-%{version}.tar.gz
-# Source0-md5:	0ed26f9e6e5086a40661d6b03127573e
+# Source0-md5:	6fd6baf4389007ca59fddc33c6b3e631
 Source1:	http://dl.sourceforge.net/toycars/%{name}_track_editor-%{track_editor_ver}.tar.gz
-# Source1-md5:	1412bf0b95859aaa8d8a018c3efa5fbe
+# Source1-md5:	ec55e35b88cfbbba7e24f799dfe5691d
 Source2:	http://dl.sourceforge.net/toycars/%{name}_vehicle_editor-%{vehicle_editor_ver}.tar.gz
 # Source2-md5:	f443638a8d535b99b47316c6edca3efd
 Source3:	%{name}.desktop
-Patch0:		%{name}-headers.patch
+Patch0:		%{name}-case_brackets.patch
 URL:		http://sourceforge.net/projects/toycars/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	SDL-devel >= 1.2.10
@@ -44,7 +44,9 @@ Jupiter's Masterdrive na Atari ST.
 
 %prep
 %setup -q -a 1 -a 2
+%if %{with editors}
 %patch0 -p1
+%endif
 
 %if %{with editors}
 # copy the same file instead of patching it again

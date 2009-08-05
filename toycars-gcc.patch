@@ -1,0 +1,95 @@
+--- toycars-0.3.10/toycars_track_editor/src/TrackView.cxx~	2009-08-05 14:54:24.000000000 +0200
++++ toycars-0.3.10/toycars_track_editor/src/TrackView.cxx	2009-08-05 15:00:17.000000000 +0200
+@@ -89,7 +89,7 @@
+ //{jpg,png,bmp,pnm,pbm,pgm,ppm}
+ Fl_Image* loadImage(const char *filename)
+ {
+-   char *suffix = strrchr(filename, '.');
++   char *suffix = const_cast<char*>(strrchr(filename, '.'));
+    if (suffix == NULL)
+       return NULL;
+    if (strcmp(suffix,".jpg") == 0)
+@@ -969,13 +969,13 @@
+    uninstallMap(name);
+    
+    // chop off any .xml suffix
+-   temp = strrchr(name, '.');
++   temp = const_cast<char*>(strrchr(name, '.'));
+    if (temp) {
+       if (strcmp(temp, ".xml") == 0)
+          temp[0] = '\0';
+    }
+    // remove path
+-   temp = strrchr(name, '/');
++   temp = const_cast<char*>(strrchr(name, '/'));
+    if (temp) {
+       strncpy(trackname, temp+1, 255);
+    }
+@@ -1044,13 +1044,13 @@
+    char *temp;
+    
+    // chop off any .xml suffix
+-   temp = strrchr(name, '.');
++   temp = const_cast<char*>(strrchr(name, '.'));
+    if (temp) {
+       if (strcmp(temp, ".xml") == 0)
+          temp[0] = '\0';
+    }
+    // remove path
+-   temp = strrchr(name, '/');
++   temp = const_cast<char*>(strrchr(name, '/'));
+    if (temp) {
+       strncpy(trackname, temp+1, 255);
+    }
+--- toycars-0.3.10/toycars_vehicle_editor/src/VehicleObject.cpp~	2009-03-22 20:45:31.000000000 +0100
++++ toycars-0.3.10/toycars_vehicle_editor/src/VehicleObject.cpp	2009-08-05 15:07:51.000000000 +0200
+@@ -533,13 +533,13 @@
+    uninstallVehicle(name);
+    
+    // chop off any .xml suffix
+-   temp = strrchr(name, '.');
++   temp = const_cast<char*>(strrchr(name, '.'));
+    if (temp) {
+       if (strcmp(temp, ".xml") == 0)
+          temp[0] = '\0';
+    }
+    // remove path
+-   temp = strrchr(name, '/');
++   temp = const_cast<char*>(strrchr(name, '/'));
+    if (temp) {
+       strncpy(carname, temp+1, 255);
+    }
+@@ -610,13 +610,13 @@
+    char *temp;
+    
+    // chop off any .xml suffix
+-   temp = strrchr(name, '.');
++   temp = const_cast<char*>(strrchr(name, '.'));
+    if (temp) {
+       if (strcmp(temp, ".xml") == 0)
+          temp[0] = '\0';
+    }
+    // remove path
+-   temp = strrchr(name, '/');
++   temp = const_cast<char*>(strrchr(name, '/'));
+    if (temp) {
+       strncpy(carname, temp+1, 255);
+    }
+@@ -675,4 +675,4 @@
+    system(str);
+    */
+ #endif
+-}
+\ Brak znaku nowej linii na koñcu pliku
++}
+--- toycars-0.3.10/toycars_vehicle_editor/src/LoadSpriteFromImage.cpp~	2009-02-26 20:24:22.000000000 +0100
++++ toycars-0.3.10/toycars_vehicle_editor/src/LoadSpriteFromImage.cpp	2009-08-05 15:11:29.000000000 +0200
+@@ -23,7 +23,7 @@
+ //{jpg,png,bmp,pnm,pbm,pgm,ppm}
+ Fl_Image* loadImage(const char *filename)
+ {
+-   char *suffix = strrchr(filename, '.');
++   char *suffix = const_cast<char*>(strrchr(filename, '.'));
+    if (suffix == NULL)
+       return NULL;
+    if (strcmp(suffix,".jpg") == 0)

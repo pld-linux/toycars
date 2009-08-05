@@ -20,6 +20,7 @@ BuildRequires:	SDL_mixer-devel
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake
 BuildRequires:	fltk-gl-devel
+BuildRequires:	perl-base
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

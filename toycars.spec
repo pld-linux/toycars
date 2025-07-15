@@ -36,7 +36,7 @@ Jupiter's Masterdrive na Atari ST.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 %{__perl} -pi -e 's@Fl/@FL/@' %{name}_track_editor/src/TrackView.cxx
 
 %build
